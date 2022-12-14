@@ -1,12 +1,10 @@
 /*
- * Copyright (c) 2004, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2022, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
  * This code is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License version 2 only, as
- * published by the Free Software Foundation.  Oracle designates this
- * particular file as subject to the "Classpath" exception as provided
- * by Oracle in the LICENSE file that accompanied this code.
+ * published by the Free Software Foundation.
  *
  * This code is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
@@ -22,24 +20,25 @@
  * or visit www.oracle.com if you need additional information or have any
  * questions.
  */
-package sun.net;
 
-import java.net.URL;
 
-/**
- * ProgressMeteringPolicy is an interface for determining progress metering policy.
- *
- * @author Stanley Man-Kit Ho
- */
-public interface ProgressMeteringPolicy
-{
-    /**
-     * Return true if metering should be turned on for a particular network input stream.
-     */
-    public boolean shouldMeterInput(URL url, String method);
+package org.openjdk.bench.jdk.incubator.concurrent;
 
-    /**
-     * Return update notification threshold.
-     */
-    public int getProgressUpdateThreshold();
+import java.util.concurrent.*;
+
+public class ScopedValuesExecutorService extends ThreadPoolExecutor {
+    public ScopedValuesExecutorService(int corePoolSize, String prefix) {
+        super(1, 1, 0, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>(),
+              new AThreadFactory(), new ThreadPoolExecutor.AbortPolicy());
+    }
+}
+
+class AThreadFactory implements ThreadFactory {
+    public Thread newThread(Runnable action) {
+        return new Thread() {
+            public void run() {
+                ScopedValuesData.run(action);
+            }
+        };
+    }
 }
