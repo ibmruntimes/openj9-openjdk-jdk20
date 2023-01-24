@@ -74,8 +74,8 @@ public final class SysVPPC64leLinker extends AbstractLinker {
         return builder.build();
     }
 
-    public static VaList newVaListOfAddress(long addr, SegmentScope scope) {
-        return SysVPPC64leVaList.ofAddress(addr, scope);
+    public static VaList newVaListOfAddress(long address, SegmentScope scope) {
+        return SysVPPC64leVaList.ofAddress(address, scope);
     }
 
     public static VaList emptyVaList() {

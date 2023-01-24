@@ -74,8 +74,8 @@ public final class SysVS390xLinker extends AbstractLinker {
         return builder.build();
     }
 
-    public static VaList newVaListOfAddress(long addr, SegmentScope scope) {
-        return SysVS390xVaList.ofAddress(addr, scope);
+    public static VaList newVaListOfAddress(long address, SegmentScope scope) {
+        return SysVS390xVaList.ofAddress(address, scope);
     }
 
     public static VaList emptyVaList() {

@@ -74,8 +74,8 @@ public final class AixPPC64Linker extends AbstractLinker {
         return builder.build();
     }
 
-    public static VaList newVaListOfAddress(long addr, SegmentScope scope) {
-        return AixPPC64VaList.ofAddress(addr, scope);
+    public static VaList newVaListOfAddress(long address, SegmentScope scope) {
+        return AixPPC64VaList.ofAddress(address, scope);
     }
 
     public static VaList emptyVaList() {

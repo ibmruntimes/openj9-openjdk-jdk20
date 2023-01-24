@@ -24,7 +24,7 @@
 
 /*
  * ===========================================================================
- * (c) Copyright IBM Corp. 2022, 2022 All Rights Reserved
+ * (c) Copyright IBM Corp. 2022, 2023 All Rights Reserved
  * ===========================================================================
  */
 
@@ -45,7 +45,7 @@
  *          java.base/jdk.internal.foreign.abi.aarch64.windows
  *          java.base/jdk.internal.foreign.abi.ppc64.aix
  *          java.base/jdk.internal.foreign.abi.ppc64.sysv
-*           java.base/jdk.internal.foreign.abi.s390x.sysv
+ *          java.base/jdk.internal.foreign.abi.s390x.sysv
  * @run testng/othervm --enable-native-access=ALL-UNNAMED VaListTest
  */
 

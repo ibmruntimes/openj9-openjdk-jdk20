@@ -24,7 +24,7 @@
 
 /*
  * ===========================================================================
- * (c) Copyright IBM Corp. 2022, 2022 All Rights Reserved
+ * (c) Copyright IBM Corp. 2022, 2023 All Rights Reserved
  * ===========================================================================
  */
 
@@ -140,7 +140,7 @@ public class TestVarArgs extends CallGeneratorHelper {
             /* Vararg float is promoted to double (8 bytes) in native (See libVarArgs.c)
              * in which case float must be converted back from double at the same memory
              * address in java on the Big-Endian(BE) platforms such as AIX.
-             */ 
+             */
             if (isAixOS && (layout instanceof ValueLayout) && (((ValueLayout)layout).carrier() == float.class)) {
                 MemorySegment doubleSegmt = MemorySegment.ofAddress(ptr, JAVA_DOUBLE.byteSize(), session);
                 seg.set(JAVA_FLOAT, 0, (float)doubleSegmt.get(JAVA_DOUBLE, 0));
