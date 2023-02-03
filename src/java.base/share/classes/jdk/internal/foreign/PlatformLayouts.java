@@ -26,7 +26,7 @@
 
 /*
  * ===========================================================================
- * (c) Copyright IBM Corp. 2022, 2022 All Rights Reserved
+ * (c) Copyright IBM Corp. 2022, 2023 All Rights Reserved
  * ===========================================================================
  */
 
@@ -269,7 +269,7 @@ public final class PlatformLayouts {
         /**
          * The {@code T*} native type.
          */
-        public static final ValueLayout.OfAddress C_POINTER = ValueLayout.ADDRESS.withBitAlignment(64);
+        public static final ValueLayout.OfAddress C_POINTER = ValueLayout.ADDRESS.withBitAlignment(64).asUnbounded();
 
         /**
          * The {@code va_list} native type, as it is passed to a function.
@@ -328,7 +328,7 @@ public final class PlatformLayouts {
         /**
          * The {@code T*} native type.
          */
-        public static final ValueLayout.OfAddress C_POINTER = ValueLayout.ADDRESS.withBitAlignment(64);
+        public static final ValueLayout.OfAddress C_POINTER = ValueLayout.ADDRESS.withBitAlignment(64).asUnbounded();
 
         /**
          * The {@code va_list} native type, as it is passed to a function.
@@ -387,7 +387,7 @@ public final class PlatformLayouts {
         /**
          * The {@code T*} native type.
          */
-        public static final ValueLayout.OfAddress C_POINTER = ValueLayout.ADDRESS.withBitAlignment(64);
+        public static final ValueLayout.OfAddress C_POINTER = ValueLayout.ADDRESS.withBitAlignment(64).asUnbounded();
 
         /**
          * The {@code va_list} native type, as it is passed to a function.
