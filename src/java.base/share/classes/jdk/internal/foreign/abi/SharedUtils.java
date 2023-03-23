@@ -193,9 +193,9 @@ public final class SharedUtils {
             case SYS_V -> SysVx64Linker.getInstance();
             case LINUX_AARCH_64 -> LinuxAArch64Linker.getInstance();
             case MAC_OS_AARCH_64 -> MacOsAArch64Linker.getInstance();
-            case SysVPPC64le -> SysVPPC64leLinker.getInstance();
-            case SysVS390x -> SysVS390xLinker.getInstance();
-            case AIX -> AixPPC64Linker.getInstance();
+            case SYS_V_PPC_64LE -> SysVPPC64leLinker.getInstance();
+            case SYS_V_S390X -> SysVS390xLinker.getInstance();
+            case AIX_PPC_64 -> AixPPC64Linker.getInstance();
         };
     }
 
@@ -307,9 +307,9 @@ public final class SharedUtils {
             case SYS_V -> SysVx64Linker.newVaList(actions, scope);
             case LINUX_AARCH_64 -> LinuxAArch64Linker.newVaList(actions, scope);
             case MAC_OS_AARCH_64 -> MacOsAArch64Linker.newVaList(actions, scope);
-            case SysVPPC64le -> SysVPPC64leLinker.newVaList(actions, scope);
-            case SysVS390x -> SysVS390xLinker.newVaList(actions, scope);
-            case AIX -> AixPPC64Linker.newVaList(actions, scope);
+            case SYS_V_PPC_64LE -> SysVPPC64leLinker.newVaList(actions, scope);
+            case SYS_V_S390X -> SysVS390xLinker.newVaList(actions, scope);
+            case AIX_PPC_64 -> AixPPC64Linker.newVaList(actions, scope);
         };
     }
 
@@ -319,9 +319,9 @@ public final class SharedUtils {
             case SYS_V -> SysVx64Linker.newVaListOfAddress(address, scope);
             case LINUX_AARCH_64 -> LinuxAArch64Linker.newVaListOfAddress(address, scope);
             case MAC_OS_AARCH_64 -> MacOsAArch64Linker.newVaListOfAddress(address, scope);
-            case SysVPPC64le -> SysVPPC64leLinker.newVaListOfAddress(address, scope);
-            case SysVS390x -> SysVS390xLinker.newVaListOfAddress(address, scope);
-            case AIX -> AixPPC64Linker.newVaListOfAddress(address, scope);
+            case SYS_V_PPC_64LE -> SysVPPC64leLinker.newVaListOfAddress(address, scope);
+            case SYS_V_S390X -> SysVS390xLinker.newVaListOfAddress(address, scope);
+            case AIX_PPC_64 -> AixPPC64Linker.newVaListOfAddress(address, scope);
         };
     }
 
@@ -331,9 +331,9 @@ public final class SharedUtils {
             case SYS_V -> SysVx64Linker.emptyVaList();
             case LINUX_AARCH_64 -> LinuxAArch64Linker.emptyVaList();
             case MAC_OS_AARCH_64 -> MacOsAArch64Linker.emptyVaList();
-            case SysVPPC64le -> SysVPPC64leLinker.emptyVaList();
-            case SysVS390x -> SysVS390xLinker.emptyVaList();
-            case AIX -> AixPPC64Linker.emptyVaList();
+            case SYS_V_PPC_64LE -> SysVPPC64leLinker.emptyVaList();
+            case SYS_V_S390X -> SysVS390xLinker.emptyVaList();
+            case AIX_PPC_64 -> AixPPC64Linker.emptyVaList();
         };
     }
 
