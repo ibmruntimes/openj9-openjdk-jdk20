@@ -141,8 +141,8 @@ public class TestVarArgs extends CallGeneratorHelper {
              * in which case float must be converted back from double at the same memory
              * address in java on the Big-Endian(BE) platforms such as AIX.
              */
-            if (isAixOS && (layout instanceof ValueLayout) && (((ValueLayout)layout).carrier() == float.class)) {
-                MemorySegment doubleSegmt = MemorySegment.ofAddress(ptr, JAVA_DOUBLE.byteSize(), session);
+            if (isAixOS && (layout instanceof ValueLayout argLayout) && (argLayout.carrier() == float.class)) {
+                MemorySegment doubleSegmt = MemorySegment.ofAddress(ptr.address(), JAVA_DOUBLE.byteSize(), arena.scope());
                 seg.set(JAVA_FLOAT, 0, (float)doubleSegmt.get(JAVA_DOUBLE, 0));
             }
             Object obj = getter.invoke(seg);
