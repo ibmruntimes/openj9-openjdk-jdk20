@@ -39,6 +39,7 @@ public class OpenJ9PropsExt implements Callable<Map<String, String>> {
             map.put("docker.support", "true");
             map.put("vm.bits", vmBits());
             map.put("vm.cds", "false");
+            map.put("vm.cds.write.archived.java.heap", "false");
             map.put("vm.compiler2.enabled", "false");
             map.put("vm.continuations", "false");
             map.put("vm.debug", "false");
